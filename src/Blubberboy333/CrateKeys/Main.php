@@ -5,7 +5,7 @@ namespace Blubberboy333\CrateKeys;
 use pocketmine\utils\Config;
 use pocketmine\utils\TextFormat;
 use pocketmine\command\Command;
-use pocketmine\command\CommandSender;
+use pocketmine\command\ConsoleCommandSender;
 use pocketmine\Player;
 use pocketmine\block\Block;
 use pocketmine\item\Item;
