@@ -68,7 +68,7 @@ class Main extends PluginBase implements Listener{
 	
 	public function onPlayerInteractEvent(PlayerInteractEvent $event){
 		$player = $event->getPlayer();
-		$heldItem= $player->getInvetory()->getItemInHand();
+		$heldItem= $player->getInventory()->getItemInHand();
 		$block = $event->getBlock();
 		$location = array($block->x, $block->y, $block->z);
 		$level = $block->getLevel();
