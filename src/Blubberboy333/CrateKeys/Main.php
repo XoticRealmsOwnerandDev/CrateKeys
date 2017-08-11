@@ -43,7 +43,7 @@ class Main extends PluginBase implements Listener{
 							$player->getInventory()->addItem($item);
 							$commands = $this->getConfig()->get("Commands");
 							foreach($commands as $i){
-								$this->getServer()->dispatchCommand(new ConsoleCommandSender, str_replace(array("{PLAYER}", "{NAME}"), $player, $player->getName())));
+								$this->getServer()->dispatchCommand(new ConsoleCommandSender, str_replace(array("{PLAYER}", "{NAME}"), $player, $player->getName()));
 							}
 							$sender->sendMessage("Gave ".$player->getName()." a CrateKey!");
 							if($sender instanceof Player){
