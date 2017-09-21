@@ -5,7 +5,7 @@ namespace Blubberboy333\CrateKeys;
 use pocketmine\utils\Config;
 use pocketmine\utils\TextFormat;
 use pocketmine\command\Command;
-use pocketmine\command\ConsoleCommandSender;
+use pocketmine\command\CommandSender;
 use pocketmine\Player;
 use pocketmine\block\Block;
 use pocketmine\item\Item;
@@ -43,7 +43,7 @@ class Main extends PluginBase implements Listener{
 							$player->getInventory()->addItem($item);
 							$commands = $this->getConfig()->get("Commands");
 							foreach($commands as $i){
-								$this->getServer()->dispatchCommand(new ConsoleCommandSender, str_replace(array("{PLAYER}", "{NAME}"), $player, $player->getName())));
+								$this->getServer()->dispatchCommand(new ConsoleCommandSender, str_replace(array("{PLAYER}", "{NAME}"), $player, $player->getName()));
 							}
 							$sender->sendMessage("Gave ".$player->getName()." a CrateKey!");
 							if($sender instanceof Player){
@@ -68,7 +68,7 @@ class Main extends PluginBase implements Listener{
 	
 	public function onPlayerInteractEvent(PlayerInteractEvent $event){
 		$player = $event->getPlayer();
-		$heldItem= $player->getInvetory()->getItemInHand();
+		$heldItem= $player->getInventory()->getItemInHand();
 		$block = $event->getBlock();
 		$location = array($block->x, $block->y, $block->z);
 		$level = $block->getLevel();
